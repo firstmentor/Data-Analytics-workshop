@@ -1,0 +1,139 @@
+Main Program
+
+hello(2)
+
+Ab n = 2
+
+Print
+
+Hello
+
+Fir
+
+hello(1)
+
+call hua.
+
+Ab hello(2) yahin ruk gaya aur wait kar raha hai.
+
+Step 2
+
+Ab hello(1) start hua.
+
+Print
+
+Hello
+
+Fir
+
+hello(0)
+
+call hua.
+
+Ab hello(1) bhi wait kar raha hai.
+
+Step 3
+
+Ab hello(0) start hua.
+
+if n==0:
+    return
+
+Ho gaya.
+
+Ab dhyan se suno.
+
+hello(0) ke andar koi hello(n-1) execute hi nahi hua.
+
+Kyun?
+
+Kyunki function to
+
+return
+
+par hi khatam ho gaya.
+
+Isliye hello(0) ke andar wapas nahi aayega.
+
+To fir kahan jayega?
+
+Wo us function ke paas jayega jisne usko call kiya tha.
+
+Aur hello(0) ko kisne call kiya tha?
+
+hello(1)
+
+Yani control hello(1) ke paas jayega.
+
+Lekin hello(1) mein bhi hello(0) ke baad koi code nahi hai.
+
+print("Hello")
+hello(0)
+
+# yahan kuch bhi nahi hai
+
+Isliye hello(1) bhi finish.
+
+Fir control hello(2) ke paas.
+
+Agar main ye code likhu
+def hello(n):
+    if n == 0:
+        return
+
+    print("Hello", n)
+
+    hello(n-1)
+
+    print("Back", n)
+
+hello(2)
+
+Output kya hoga?
+
+Hello 2
+Hello 1
+Back 1
+Back 2
+Kyon?
+
+Jab hello(0) return hua to control hello(1) mein hello(n-1) wali line ke baad aaya.
+
+Isliye
+
+print("Back",1)
+
+chala.
+
+Fir hello(1) khatam.
+
+Fir control hello(2) mein hello(n-1) ke baad aaya.
+
+Fir
+
+print("Back",2)
+
+chala.
+
+🔥 Golden Rule
+
+Return kabhi bhi usi function ke andar wapas nahi aata jisne return kiya hai.
+
+Return caller function ke paas aata hai.
+
+Yani:
+
+hello(2)
+   │
+   └── hello(1)
+          │
+          └── hello(0)
+                 │
+              return
+                 │
+                 ▼
+          hello(1)  ← yahan wapas
+                 │
+              finish
+                 ▼
+          hello(2)  ← fir yahan wapas
